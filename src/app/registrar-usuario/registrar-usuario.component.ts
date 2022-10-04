@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Usuario } from '../usuario';
+import { UsuarioService } from '../usuario.service';
 
 @Component({
   selector: 'app-registrar-usuario',
@@ -9,13 +11,24 @@ import { Usuario } from '../usuario';
 export class RegistrarUsuarioComponent implements OnInit {
 
   usuario : Usuario = new Usuario();
-  constructor() { }
+  constructor(private usuarioServicio:UsuarioService, private router:Router) { }
 
   ngOnInit(): void {
   }
 
+  guardarUsuario(){
+    this.usuarioServicio.registrarUsuario(this.usuario).subscribe(dato => {
+      console.log(dato);
+      this.irAListaUsuarios();
+    });
+  }
+
+  irAListaUsuarios(){
+    this.router.navigate(['/usuarios'])
+  }
+
   onSubmit(){
-    console.log(this.usuario);
+    this.guardarUsuario();
   }
 
 }

@@ -16,9 +16,12 @@ export class UsuarioService {
 
   //Metodo para obtener usuarios.
 
-    obtenerListaUsuarios():Observable<Usuario[]>{
-
-      return this.httpCient.get<Usuario[]>(`${this.baseURL}`);
-    }
+  obtenerListaUsuarios():Observable<Usuario[]>{
+    return this.httpCient.get<Usuario[]>(`${this.baseURL}`);
+  }
+  //Metodo para registrar usuarios.
+  registrarUsuario(usuario:Usuario) : Observable<Object>{
+    return this.httpCient.post(`${this.baseURL}`,usuario)
+  }
 
 }
