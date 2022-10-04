@@ -1,0 +1,36 @@
+<h2>Lista Empleados</h2>
+<table class = "table table-striped">
+
+  <thead class="table-info">
+
+    <tr>
+      <th>Id</th>
+      <th>Nombre</th>
+      <th>ApellidoP</th>
+      <th>ApellidoM</th>
+      <th>Domicilio</th>
+      <th>Telefono</th>
+      <th>Sanciones</th>
+      <th>Deuda</th>
+    </tr>
+
+  </thead>
+  <tbody>
+
+    <tr *ngFor = "let usuario of usuarios ">
+
+      <td>{{usuario.id}}</td>
+      <td>{{usuario.nombre}}</td>
+      <td>{{usuario.apellidoP}}</td>
+      <td>{{usuario.apellidoM}}</td>
+      <td>{{usuario.domicilio}}</td>
+      <td>{{usuario.tel}}</td>
+      <td>{{usuario.sanctions}}</td>
+      <td>{{usuario.sanc_money}}</td>
+
+
+    </tr>
+
+  </tbody>
+
+</table>
