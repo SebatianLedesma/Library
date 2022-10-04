@@ -41,6 +41,22 @@
       [(ngModel)] = "usuario.tel"
       name="nombre">
     </div>
+    <div class="form-group">
+      <label>Sanciones</label>
+      <input type="text"
+      class="form-control"
+      id="sanciones"
+      [(ngModel)] = "usuario.sanctions"
+      name="sanciones">
+    </div>
+    <div class="form-group">
+      <label>Deuda</label>
+      <input type="text"
+      class="form-control"
+      id="deuda"
+      [(ngModel)] = "usuario.sanc_money"
+      name="deuda">
+    </div>
 
     <button class="btn btn-success">Registrar</button>
 
