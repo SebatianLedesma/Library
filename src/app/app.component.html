@@ -1,5 +1,18 @@
+
+<nav class="navbar navbar-expand-sm bg-info navbar-dark">
+<ul class="navbar-nav">
+  <li class ="navbar,item">
+    <a routerLink="usuarios" routerLinkActive="active" class="nav-link">Lista de Usuarios</a>
+  </li>
+  <li class ="navbar,item">
+    <a routerLink="registrar-usuario" routerLinkActive="active" class="nav-link">Registrarse</a>
+  </li>
+
+</ul>
+</nav>
+
 <h1 class="text-center">{{title}}</h1>
 
 <div class="container">
-  <app-lista-usuarios></app-lista-usuarios>
+  <router-outlet></router-outlet>
 </div>
