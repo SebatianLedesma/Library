@@ -18,7 +18,7 @@ export class UsuarioService {
 
     obtenerListaUsuarios():Observable<Usuario[]>{
 
-      return this.httpCient.get<Usuario[]>('${this.baseURL}');
+      return this.httpCient.get<Usuario[]>(`${this.baseURL}`);
     }
 
 }

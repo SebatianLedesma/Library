@@ -1,9 +1,9 @@
 export class Usuario {
 
   id: number;
-  nombre:string;
-  apellidoP:string;
-  apellidoM:string;
+  name:string;
+  last_name_p:string;
+  last_name_m:string;
   domicilio:string;
   tel:string;
   sanctions:string;
