@@ -19,11 +19,11 @@ export class RegistrarUsuarioComponent implements OnInit {
   guardarUsuario(){
     this.usuarioServicio.registrarUsuario(this.usuario).subscribe(dato => {
       console.log(dato);
-      this.irAListaUsuarios();
+      this.irAListaDeUsuarios();
     });
   }
 
-  irAListaUsuarios(){
+  irAListaDeUsuarios(){
     this.router.navigate(['/usuarios'])
   }
 

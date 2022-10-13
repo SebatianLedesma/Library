@@ -12,13 +12,12 @@
       <th>Telefono</th>
       <th>Sanciones</th>
       <th>Deuda</th>
+      <th>Acciones</th>
     </tr>
 
   </thead>
   <tbody>
-
     <tr *ngFor = "let usuario of usuarios ">
-
       <td>{{usuario.id}}</td>
       <td>{{usuario.name}}</td>
       <td>{{usuario.last_name_p}}</td>
@@ -27,8 +26,11 @@
       <td>{{usuario.tel}}</td>
       <td>{{usuario.sanctions}}</td>
       <td>{{usuario.sanc_money}}</td>
-
-
+      <td>
+        <button (click)="actualizarUsuario(usuario.id)" class="btn btn-info" style="padding: 2px;">Editar</button>
+        <button (click)="eliminarUsuario(usuario.id)" class="btn btn-danger" style="margin-left:2px; padding: 2px;">Eliminar</button>
+        <button (click)="verDetallesDelUsuario(usuario.id)" class="btn btn-primary" style="margin-left:2px; padding: 2px;">info</button>
+      </td>
     </tr>
 
   </tbody>

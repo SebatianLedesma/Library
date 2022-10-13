@@ -1,64 +1,180 @@
-<div class = "col-md-6 offset-md-3">
+<div class="col-md-6 offset-md-3">
   <h3 class="text-center">Registro de Usuario</h3>
   <form (ngSubmit)="onSubmit()">
     <div class="form-group">
       <label>Nombre</label>
-      <input type="text"
-      class="form-control"
-      id="nombre"
-      [(ngModel)] = "usuario.name"
-      name="nombre">
+      <input
+        type="text"
+        class="form-control"
+        id="nombre"
+        [(ngModel)]="usuario.name"
+        name="nombre"
+        required
+        minlength="4"
+        maxlength="10"
+        placeholder="Digite su nombre"
+        #nombre = "ngModel"
+      >
+      <div class="alert alert-danger" *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)">
+        <div *ngIf="nombre.errors['required']">
+          Digite su nombre por favor
+        </div>
+        <div *ngIf="nombre.errors['minlength']">
+          El nombre debe tener como minimo 4 caracteres
+        </div>
+        <div *ngIf="nombre.errors['maxlength']">
+          El nombre debe tener como máximo 10 caracteres
+        </div>
+      </div>
     </div>
+
     <div class="form-group">
       <label>Apellido Paterno</label>
-      <input type="text"
-      class="form-control"
-      id="apellidoP"
-      [(ngModel)] = "usuario.last_name_p"
-      name="apellidoP">
+      <input
+        type="text"
+        class="form-control"
+        id="apellidoP"
+        [(ngModel)]="usuario.last_name_p"
+        name="apellidoP"
+        required
+        minlength="4"
+        maxlength="10"
+        placeholder="Digite su apellido paterno"
+        #apellidoP = "ngModel"
+      >
+      <div class="alert alert-danger" *ngIf="apellidoP.invalid && (apellidoP.dirty || apellidoP.touched)">
+        <div *ngIf="apellidoP.errors['required']">
+          Digite su apellido paterno por favor
+        </div>
+        <div *ngIf="apellidoP.errors['minlength']">
+          El apellido debe tener como minimo 4 caracteres
+        </div>
+        <div *ngIf="apellidoP.errors['maxlength']">
+          El apellido debe tener como máximo 10 caracteres
+        </div>
+      </div>
     </div>
+
     <div class="form-group">
       <label>Apellido Materno</label>
-      <input type="text"
-      class="form-control"
-      id="apellidoM"
-      [(ngModel)] = "usuario.last_name_m"
-      name="apellidoM">
+      <input
+        type="text"
+        class="form-control"
+        id="apellidoM"
+        [(ngModel)]="usuario.last_name_m"
+        name="apellidoM"
+        required
+        minlength="4"
+        maxlength="10"
+        placeholder="Digite su apellido materno"
+        #apellidoM = "ngModel"
+      >
+      <div class="alert alert-danger" *ngIf="apellidoM.invalid && (apellidoM.dirty || apellidoM.touched)">
+        <div *ngIf="apellidoM.errors['required']">
+          Digite su apellido paterno por favor
+        </div>
+        <div *ngIf="apellidoM.errors['minlength']">
+          El apellido debe tener como minimo 4 caracteres
+        </div>
+        <div *ngIf="apellidoM.errors['maxlength']">
+          El apellido debe tener como máximo 10 caracteres
+        </div>
+      </div>
     </div>
+
     <div class="form-group">
       <label>Domicilio</label>
-      <input type="text"
-      class="form-control"
-      id="domicilio"
-      [(ngModel)] = "usuario.name"
-      name="domicilio">
+      <input
+        type="text"
+        class="form-control"
+        id="domicilio"
+        [(ngModel)]="usuario.domicilio"
+        name="domicilio"
+        required
+        minlength="4"
+        maxlength="30"
+        placeholder="Digite su domicilio"
+        #domicilio = "ngModel"
+      >
+      <div class="alert alert-danger" *ngIf="domicilio.invalid && (domicilio.dirty || domicilio.touched)">
+        <div *ngIf="domicilio.errors['required']">
+          Digite su domicilio paterno por favor
+        </div>
+        <div *ngIf="domicilio.errors['minlength']">
+          El domicilio debe tener como minimo 4 caracteres
+        </div>
+        <div *ngIf="domicilio.errors['maxlength']">
+          El domicilio debe tener como máximo 30 caracteres
+        </div>
+      </div>
     </div>
+
     <div class="form-group">
       <label>Telefono</label>
-      <input type="text"
-      class="form-control"
-      id="telefono"
-      [(ngModel)] = "usuario.tel"
-      name="nombre">
+      <input
+        type="text"
+        class="form-control"
+        id="telefono"
+        [(ngModel)]="usuario.tel"
+        name="telefono"
+        required
+        minlength="9"
+        maxlength="15"
+        placeholder="Digite su telefono"
+        #telefono = "ngModel"
+      >
+      <div class="alert alert-danger" *ngIf="telefono.invalid && (telefono.dirty || telefono.touched)">
+        <div *ngIf="telefono.errors['required']">
+          Digite su telefono por favor
+        </div>
+        <div *ngIf="telefono.errors['minlength']">
+          El telefono debe tener como minimo 9 caracteres
+        </div>
+        <div *ngIf="telefono.errors['maxlength']">
+          El telefono debe tener como máximo 15 caracteres
+        </div>
+      </div>
     </div>
+
     <div class="form-group">
       <label>Sanciones</label>
-      <input type="text"
-      class="form-control"
-      id="sanciones"
-      [(ngModel)] = "usuario.sanctions"
-      name="sanciones">
+      <input
+        type="text"
+        class="form-control"
+        id="sanciones"
+        [(ngModel)]="usuario.sanctions"
+        name="sanciones"
+        required
+        minlength="1"
+        maxlength="10"
+        placeholder="Digite sus sanciones"
+        #sanciones = "ngModel"
+      >
+      <div class="alert alert-danger" *ngIf="sanciones.invalid && (sanciones.dirty || sanciones.touched)">
+        <div *ngIf="sanciones.errors['required']">
+          Digite su sanciones por favor
+        </div>
+        <div *ngIf="sanciones.errors['minlength']">
+          El sanciones debe tener como minimo 9 caracteres
+        </div>
+        <div *ngIf="telefono.errors['maxlength']">
+          El telefono debe tener como máximo 15 caracteres
+        </div>
+      </div>
     </div>
+
+
     <div class="form-group">
       <label>Deuda</label>
-      <input type="text"
-      class="form-control"
-      id="deuda"
-      [(ngModel)] = "usuario.sanc_money"
-      name="deuda">
+      <input
+        type="text"
+        class="form-control"
+        id="deuda"
+        [(ngModel)]="usuario.sanc_money"
+        name="deuda"
+      />
     </div>
 
     <button class="btn btn-success">Registrar</button>
-
   </form>
 </div>
