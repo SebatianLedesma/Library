@@ -16,7 +16,7 @@ export class UsuarioService {
 
   //Metodo para obtener usuarios.
 
-  obtenerListaUsuarios():Observable<Usuario[]>{
+  obtenerListaDeUsuarios():Observable<Usuario[]>{
     return this.httpCient.get<Usuario[]>(`${this.baseURL}`);
   }
   //Metodo para registrar usuarios.
@@ -24,4 +24,18 @@ export class UsuarioService {
     return this.httpCient.post(`${this.baseURL}`,usuario)
   }
 
+  //Metodo para actualizar un usuario.
+  actualizarUsuario(id:number, usuario:Usuario) : Observable<Object>{
+    return this.httpCient.put(`${this.baseURL}/${id}`,usuario);
+  }
+
+  //Metodo para obtener o buscar un usuario.
+  obtenerUsuarioPorId(id:number) : Observable<Usuario>{
+    return this.httpCient.get<Usuario>(`${this.baseURL}/${id}`);
+  }
+
+  //Metodo para eliminar o buscar un usuario.
+  eliminarUsuario(id:number) : Observable<Object>{
+    return this.httpCient.delete<Usuario>(`${this.baseURL}/${id}`);
+  }
 }

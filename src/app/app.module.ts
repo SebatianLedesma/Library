@@ -7,12 +7,16 @@ import { ListaUsuariosComponent } from './lista-usuarios/lista-usuarios.componen
 import {HttpClientModule} from '@angular/common/http';
 import { RegistrarUsuarioComponent } from './registrar-usuario/registrar-usuario.component';
 import { FormsModule } from '@angular/forms';
+import { ActualizarUsuarioComponent } from './actualizar-usuario/actualizar-usuario.component';
+import { UsuarioDetallesComponent } from './usuario-detalles/usuario-detalles.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListaUsuariosComponent,
-    RegistrarUsuarioComponent
+    RegistrarUsuarioComponent,
+    ActualizarUsuarioComponent,
+    UsuarioDetallesComponent
   ],
   imports: [
     BrowserModule,
